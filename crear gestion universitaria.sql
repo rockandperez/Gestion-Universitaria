@@ -34,7 +34,8 @@ CREATE TABLE [Administrativos] (
   [email] nvarchar(255),
   [FechaNacimiento] date,
   [Sexo] char(1),
-  [telefono] nvarchar(255)
+  [telefono] nvarchar(255),
+  [clave] nvarchar (10)
 )
 GO
 
@@ -48,7 +49,8 @@ GO
 CREATE TABLE [Profesor_Materia] (
   [id] int IDENTITY (1,1) PRIMARY KEY,
   [id_profesor] int,
-  [id_materia] int
+  [id_materia] int,
+  [id_aula] int
 )
 GO
 
@@ -77,7 +79,7 @@ GO
 CREATE TABLE [Inscripciones_Asignaturas] (
   [id_Inscripcion] int,
   [id_asignatura] int,
-  [id_alumno] int
+  [id_legajo] bigint
 )
 GO
 
@@ -85,25 +87,15 @@ CREATE TABLE [Aulas] (
   [id] int IDENTITY (1,1) PRIMARY KEY,
   [nombre] nvarchar(255),
   [capacidad] int
-)
+);
 GO
 
-CREATE TABLE [Aula_Cursada] (
-  [id_aula] int IDENTITY (1,1) PRIMARY KEY,
-  [id_profesor_materia] int
-)
-GO
-
-CREATE TABLE [Turnos] (
-  [id] int IDENTITY (1,1) PRIMARY KEY,
-  [nombre] nvarchar(255),
-)
-GO
-
--- Insertar los registros de turnos
-INSERT INTO Turnos (nombre) VALUES ('mañana');
-INSERT INTO Turnos (nombre) VALUES ('tarde');
-INSERT INTO Turnos (nombre) VALUES ('noche');
+create table [Aulas_Disponibilidad](
+	id_aula int not null,
+	id_evento int null,
+	id_Profesor_Materia int null,
+	disponible bit
+);
 GO
 
 CREATE TABLE [Eventos] (
@@ -111,54 +103,80 @@ CREATE TABLE [Eventos] (
   [nombre] nvarchar(255),
   [descripcion] nvarchar(255),
   [fecha] datetime
-)
+);
 GO
 
 CREATE TABLE [Examenes] (
   [id] int IDENTITY (1,1) PRIMARY KEY,
   [nombre] nvarchar(255),
   [descripcion] nvarchar(255),
-  [fecha] datetime
-)
+  [fecha] date,
+  [id_examen_materia] int not null
+);
 GO
 
 CREATE TABLE [Calificaciones] (
   [id] int IDENTITY (1,1) PRIMARY KEY,
-  [nota] int,
-)
+  [Estado] varchar(20),
+);
 GO
 
-
-ALTER TABLE [Profesor_Materia] ADD FOREIGN KEY ([id_profesor]) REFERENCES [Profesores] ([id])
+Create Table [Calificaciones_Alumnos](
+	id_legajo bigint not null,
+	Nota int not null,
+	id_examen int not null,
+	id_estado int not null
+);
 GO
 
-ALTER TABLE [Profesor_Materia] ADD FOREIGN KEY ([id_materia]) REFERENCES [Materias] ([id])
+ALTER TABLE [Profesor_Materia] ADD FOREIGN KEY ([id_profesor]) REFERENCES [Profesores] ([id]);
 GO
 
-ALTER TABLE [Legajos] ADD FOREIGN KEY ([id_alumno]) REFERENCES [Estudiantes] ([id])
+ALTER TABLE [Profesor_Materia] ADD FOREIGN KEY ([id_materia]) REFERENCES [Materias] ([id]);
 GO
 
-ALTER TABLE [Legajos] ADD FOREIGN KEY ([id_carrera]) REFERENCES [Carreras] ([id])
+ALTER TABLE [Legajos] ADD FOREIGN KEY ([id_alumno]) REFERENCES [Estudiantes] ([id]);
 GO
 
-ALTER TABLE [Inscripciones] ADD FOREIGN KEY ([id_alumno]) REFERENCES [Estudiantes] ([id])
+ALTER TABLE [Legajos] ADD FOREIGN KEY ([id_carrera]) REFERENCES [Carreras] ([id]);
 GO
 
-ALTER TABLE [Inscripciones] ADD FOREIGN KEY ([id_carrera]) REFERENCES [Carreras] ([id])
+ALTER TABLE [Inscripciones] ADD FOREIGN KEY ([id_alumno]) REFERENCES [Estudiantes] ([id]);
 GO
 
-ALTER TABLE [Inscripciones] ADD FOREIGN KEY ([id_admin]) REFERENCES [Administrativos] ([id])
+ALTER TABLE [Inscripciones] ADD FOREIGN KEY ([id_carrera]) REFERENCES [Carreras] ([id]);
 GO
 
-ALTER TABLE [Inscripciones_Asignaturas] ADD FOREIGN KEY ([id_Inscripcion]) REFERENCES [Inscripciones] ([id])
+ALTER TABLE [Inscripciones] ADD FOREIGN KEY ([id_admin]) REFERENCES [Administrativos] ([id]);
 GO
 
-ALTER TABLE [Inscripciones_Asignaturas] ADD FOREIGN KEY ([id_asignatura]) REFERENCES [Materias] ([id])
+ALTER TABLE [Inscripciones_Asignaturas] ADD FOREIGN KEY ([id_Inscripcion]) REFERENCES [Inscripciones] ([id]);
 GO
 
-ALTER TABLE [Inscripciones_Asignaturas] ADD FOREIGN KEY ([id_alumno]) REFERENCES [Estudiantes] ([id])
+ALTER TABLE [Inscripciones_Asignaturas] ADD FOREIGN KEY ([id_asignatura]) REFERENCES [Materias] ([id]);
 GO
 
-ALTER TABLE [Administrativos] ADD clave AS 'adm' + RIGHT('00' + CAST(id AS NVARCHAR(10)), 2) PERSISTED;
+ALTER TABLE [Inscripciones_Asignaturas] ADD FOREIGN KEY ([id_legajo]) REFERENCES [Legajos] ([id]);
+GO
+
+ALTER Table [Examenes] ADD FOREIGN KEY ([id_examen_materia]) REFERENCES [Materias] ([id]);
+GO
+
+ALTER TABLE [Aulas_Disponibilidad] ADD FOREIGN KEY ([id_evento]) REFERENCES [Eventos] ([id]);
+GO
+
+ALTER TABLE [Aulas_Disponibilidad] ADD FOREIGN KEY ([id_aula]) REFERENCES [Aulas] ([id]);
+GO
+
+ALTER TABLE [Aulas_Disponibilidad] ADD FOREIGN KEY ([id_Profesor_materia]) REFERENCES [Profesor_Materia] ([id]);
+GO
+
+ALTER TABLE [Calificaciones_Alumnos] ADD FOREIGN KEY ([id_legajo]) REFERENCES [Legajos] ([id]);
+GO
+
+ALTER TABLE [Calificaciones_Alumnos] ADD FOREIGN KEY ([id_examen]) REFERENCES [Examenes] ([id]);
+GO
+
+ALTER TABLE [Calificaciones_Alumnos] ADD FOREIGN KEY ([id_estado]) REFERENCES [Calificaciones] ([id]);
 GO
 

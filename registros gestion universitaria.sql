@@ -1,29 +1,32 @@
 USE Gestion_Universitaria
 
 GO
+--Administradores, Aulas, Estudiantes, Profesores, Materias, Carreras
 
--- Insertar datos en la tabla Administrativos
-INSERT INTO Administrativos (nombre, apellido, telefono, email) VALUES
-('Mario', 'Pérez', '11-1234-5678', 'mario.perez@universidad.edu'),
-('María', 'López', '11-2345-6789', 'maria.lopez@universidad.edu'),
-('Carlos', 'García', '11-3456-7890', 'carlos.garcia@universidad.edu'),
-('Laura', 'Martínez', '11-4567-8901', 'laura.martinez@universidad.edu'),
-('Juan', 'Rodríguez', '11-5678-9012', 'juan.rodriguez@universidad.edu'),
-('Ana', 'Fernández', '11-6789-0123', 'ana.fernandez@universidad.edu'),
-('José', 'Gómez', '11-7890-1234', 'jose.gomez@universidad.edu'),
-('Luis', 'Díaz', '11-8901-2345', 'luis.diaz@universidad.edu'),
-('Sofía', 'Muñoz', '11-9012-3456', 'sofia.munoz@universidad.edu'),
-('Miguel', 'Sánchez', '11-0123-4567', 'miguel.sanchez@universidad.edu'),
-('Elena', 'Torres', '11-1234-5678', 'elena.torres@universidad.edu'),
-('Diego', 'Vargas', '11-2345-6789', 'diego.vargas@universidad.edu'),
-('Marta', 'Castro', '11-3456-7890', 'marta.castro@universidad.edu'),
-('Pedro', 'Ramos', '11-4567-8901', 'pedro.ramos@universidad.edu'),
-('Patricia', 'Reyes', '11-5678-9012', 'patricia.reyes@universidad.edu'),
-('Ricardo', 'Ruiz', '11-6789-0123', 'ricardo.ruiz@universidad.edu'),
-('Verónica', 'Ortiz', '11-7890-1234', 'veronica.ortiz@universidad.edu'),
-('Daniel', 'Medina', '11-8901-2345', 'daniel.medina@universidad.edu'),
-('Sandra', 'Iglesias', '11-9012-3456', 'sandra.iglesias@universidad.edu'),
-('Alberto', 'Santos', '11-0123-4567', 'alberto.santos@universidad.edu');
+
+INSERT INTO Administrativos (Nombre, Apellido, Telefono, Email, FechaNacimiento, Sexo)
+VALUES 
+('Juan', 'Pérez', '011-1234-5678', 'juan.perez@gmail.com', '1970-03-14', 'M'),
+('María', 'López', '011-2345-6789', 'maria.lopez@hotmail.com', '1980-07-22', 'F'),
+('Carlos', 'García', '011-3456-7890', 'carlos.garcia@yahoo.com', '1965-01-05', 'M'),
+('Laura', 'Martínez', '011-4567-8901', 'laura.martinez@gmail.com', '1990-11-30', 'F'),
+('Alejandro', 'Rodríguez', '011-5678-9012', 'alejandro.rodriguez@hotmail.com', '1985-08-19', 'M'),
+('Ana', 'Sánchez', '011-6789-0123', 'ana.sanchez@yahoo.com', '1995-02-27', 'F'),
+('Luis', 'Hernández', '011-7890-1234', 'luis.hernandez@gmail.com', '1968-12-12', 'M'),
+('Sofía', 'Díaz', '011-8901-2345', 'sofia.diaz@hotmail.com', '1992-04-18', 'F'),
+('Pablo', 'Torres', '011-9012-3456', 'pablo.torres@yahoo.com', '1982-09-09', 'M'),
+('Marta', 'González', '011-0123-4567', 'marta.gonzalez@gmail.com', '1975-06-25', 'F'),
+('David', 'Romero', '011-1234-5678', 'david.romero@hotmail.com', '1987-03-03', 'M'),
+('Elena', 'García', '011-2345-6789', 'elena.garcia@yahoo.com', '1972-07-17', 'F'),
+('Javier', 'Ruiz', '011-3456-7890', 'javier.ruiz@gmail.com', '1998-01-23', 'M'),
+('Laura', 'López', '011-4567-8901', 'laura.lopez@hotmail.com', '1962-10-10', 'F'),
+('María', 'Martín', '011-5678-9012', 'maria.martin@yahoo.com', '1978-05-04', 'F'),
+('Carlos', 'Sánchez', '011-6789-0123', 'carlos.sanchez@gmail.com', '1967-12-01', 'M'),
+('Andrea', 'Pérez', '011-7890-1234', 'andrea.perez@hotmail.com', '1993-11-05', 'F'),
+('Juan', 'Díaz', '011-8901-2345', 'juan.diaz@yahoo.com', '1981-03-22', 'M'),
+('Elena', 'Torres', '011-9012-3456', 'elena.torres@gmail.com', '1999-08-30', 'F'),
+('Luisa', 'González', '011-0123-4567', 'luisa.gonzalez@hotmail.com', '1964-05-15', 'F');
+
 
 
 INSERT INTO Aulas (nombre, capacidad) VALUES
@@ -114,3 +117,72 @@ INSERT INTO Estudiantes (nombre, apellido, email, FechaNacimiento, Sexo) VALUES
 ('Verónica', 'Ortiz', 'veronica.ortiz@hotmail.com', '1995-10-18', 'F'),
 ('Ricardo', 'Núñez', 'ricardo.nunez@gmail.com', '1996-01-05', 'M'),
 ('Sandra', 'Iglesias', 'sandra.iglesias@yahoo.com', '1997-04-14', 'F');
+
+
+INSERT INTO Materias (Nombre, Descripcion)
+VALUES 
+('Matemáticas I', 'Introducción a los conceptos básicos de álgebra y geometría.'),
+('Física I', 'Estudio de los principios fundamentales de la mecánica y la termodinámica.'),
+('Química General', 'Conceptos básicos de química inorgánica y orgánica.'),
+('Biología General', 'Introducción a la biología celular y molecular.'),
+('Historia Universal', 'Estudio de los eventos históricos más relevantes desde la antigüedad hasta la era moderna.'),
+('Literatura Universal', 'Análisis de obras literarias representativas de distintas épocas y culturas.'),
+('Programación I', 'Introducción a los conceptos básicos de programación y algoritmos.'),
+('Economía', 'Estudio de los principios económicos básicos y su aplicación.'),
+('Psicología General', 'Introducción a las teorías y prácticas fundamentales de la psicología.'),
+('Sociología', 'Estudio de la estructura y dinámica de la sociedad humana.'),
+('Filosofía', 'Introducción a los principales conceptos y problemas filosóficos.'),
+('Derecho Constitucional', 'Estudio de los principios y estructuras del derecho constitucional.'),
+('Estadística I', 'Introducción a los métodos estadísticos y su aplicación.'),
+('Química Orgánica', 'Estudio de las estructuras, propiedades y reacciones de los compuestos orgánicos.'),
+('Física II', 'Continuación del estudio de la física, enfocándose en electricidad y magnetismo.'),
+('Matemáticas II', 'Estudio avanzado de álgebra, cálculo diferencial e integral.'),
+('Ingeniería de Software', 'Conceptos y prácticas para el desarrollo de software a gran escala.'),
+('Microeconomía', 'Análisis de las decisiones individuales de consumidores y empresas.'),
+('Macroeconomía', 'Estudio de los sistemas económicos a nivel global y nacional.'),
+('Arte y Cultura', 'Exploración de las manifestaciones artísticas y culturales a través del tiempo.');
+
+-- Inserción de datos en la tabla Examenes
+INSERT INTO Examenes (nombre, descripcion, fecha, id_examen_materia)
+VALUES
+('PARCIAL', 'Primer parcial del curso', '2024-07-01', 1),
+('FINAL', 'Examen final del curso', '2023-07-15', 2),
+('RECUPERATORIO', 'Recuperatorio del primer parcial', '2023-07-08', 3),
+('PARCIAL', 'Segundo parcial del curso', '2023-08-01', 4),
+('FINAL', 'Examen final del curso', '2023-08-15', 5),
+('RECUPERATORIO', 'Recuperatorio del segundo parcial', '2023-08-08', 6),
+('PARCIAL', 'Primer parcial del curso', '2023-09-01', 7),
+('FINAL', 'Examen final del curso', '2023-09-15', 8),
+('RECUPERATORIO', 'Recuperatorio del primer parcial', '2023-09-08', 9),
+('PARCIAL', 'Segundo parcial del curso', '2023-10-01', 10);
+
+INSERT INTO Calificaciones (Estado)
+VALUES
+('APROBADO'),
+('DESAPROBADO'),
+('RINDE FINAL'),
+('RECURSA')
+
+-- Inserción de datos en la tabla Calificaciones_Alumnos
+INSERT INTO Calificaciones_Alumnos (id_legajo, Nota, id_examen, id_estado)
+VALUES
+(1000, 8, 11, 1),
+(1001, 7, 12, 1),
+(1002, 5, 13, 1),
+(1003, 3, 14, 2),
+(1004, 10, 15, 1),
+(1005, 2, 16, 2),
+(1006, 6, 17, 1),
+(1007, 9, 18, 1),
+(1008, 4, 19, 1),
+(1009, 7, 13, 1),
+(1010, 5, 16, 1),
+(1011, 8, 15, 1),
+(1012, 3, 13, 2),
+(1013, 6, 11, 1),
+(1014, 2, 12, 2),
+(1015, 9, 13, 1),
+(1016, 4, 11, 1),
+(1017, 1, 11, 2),
+(1018, 7, 16, 1),
+(1019, 10, 15, 1);
