@@ -1,3 +1,6 @@
+USE Gestion_Universitaria;
+GO
+
 CREATE TRIGGER trg_InsertAdministrativo
 ON Administrativos
 AFTER INSERT

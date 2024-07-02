@@ -1,3 +1,5 @@
+USE Gestion_Universitaria;
+GO
 -- Crear el trigger para insertar un nuevo registro en Legajos después de insertar en Estudiantes
 CREATE TRIGGER trg_InsertarLegajo
 ON Estudiantes
