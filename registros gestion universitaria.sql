@@ -186,3 +186,27 @@ VALUES
 (1017, 1, 11, 2),
 (1018, 7, 16, 1),
 (1019, 10, 15, 1);
+
+-- Inserción de inscripciones de estudiantes en carreras
+INSERT INTO Inscripciones (id_alumno, id_carrera, id_admin) VALUES
+(21, 1, 42),  -- Juan Manuel Aguilar - Ingeniería Civil
+(22, 2, 43),  -- María López - Ingeniería Informática
+(23, 3, 41),  -- Carlos García - Medicina
+(24, 4, 42),  -- Lucía Martínez - Derecho
+(25, 5, 43),  -- Pablo González - Psicología
+(26, 6, 41),  -- Sofía Rodríguez - Administración de Empresas
+(27, 7, 42),  -- Martín Fernández - Contabilidad
+(28, 8, 43),  -- Ana Gómez - Arquitectura
+(29, 9, 41),  -- Miguel Díaz - Diseño Gráfico
+(30, 10, 42), -- Laura Sánchez - Comunicación Social
+(31, 11, 43), -- David Ramírez - Relaciones Internacionales
+(32, 12, 41), -- Elena Torres - Educación
+(33, 13, 42), -- Diego Vargas - Biología
+(34, 14, 43), -- Marta Castro - Química
+(35, 15, 41), -- Luis Reyes - Física
+(36, 16, 42), -- Patricia Ruiz - Matemáticas
+(37, 17, 43), -- Javier Romero - Filosofía
+(38, 18, 41), -- Verónica Ortiz - Historia
+(39, 19, 42), -- Ricardo Núñez - Geografía
+(40, 20, 43); -- Sandra Iglesias - Literatura
+GO
