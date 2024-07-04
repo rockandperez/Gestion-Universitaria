@@ -166,50 +166,53 @@ VALUES
 -- Inserción de datos en la tabla Calificaciones_Alumnos
 INSERT INTO Calificaciones_Alumnos (id_legajo, Nota, id_examen, id_estado)
 VALUES
-(1000, 8, 11, 1),
-(1001, 7, 12, 1),
-(1002, 5, 13, 1),
-(1003, 3, 14, 2),
-(1004, 10, 15, 1),
-(1005, 2, 16, 2),
-(1006, 6, 17, 1),
-(1007, 9, 18, 1),
-(1008, 4, 19, 1),
-(1009, 7, 13, 1),
-(1010, 5, 16, 1),
-(1011, 8, 15, 1),
-(1012, 3, 13, 2),
-(1013, 6, 11, 1),
-(1014, 2, 12, 2),
-(1015, 9, 13, 1),
-(1016, 4, 11, 1),
-(1017, 1, 11, 2),
-(1018, 7, 16, 1),
-(1019, 10, 15, 1);
+(1000, 8, 1, 1),
+(1001, 7, 2, 1),
+(1002, 5, 3, 1),
+(1003, 3, 4, 2),
+(1004, 10, 5, 1),
+(1005, 2, 6, 2),
+(1006, 6, 7, 1),
+(1007, 9, 8, 1),
+(1008, 4, 9, 1),
+(1009, 7, 3, 1),
+(1010, 5, 6, 1),
+(1011, 8, 5, 1),
+(1012, 3, 3, 2),
+(1013, 6, 1, 1),
+(1014, 2, 2, 2),
+(1015, 9, 3, 1),
+(1016, 4, 1, 1),
+(1017, 1, 1, 2),
+(1018, 7, 6, 1),
+(1019, 10, 5, 1);
 
 -- Inserción de inscripciones de estudiantes en carreras
 INSERT INTO Inscripciones (id_alumno, id_carrera, id_admin) VALUES
-(21, 1, 42),  -- Juan Manuel Aguilar - Ingeniería Civil
-(22, 2, 43),  -- María López - Ingeniería Informática
-(23, 3, 41),  -- Carlos García - Medicina
-(24, 4, 42),  -- Lucía Martínez - Derecho
-(25, 5, 43),  -- Pablo González - Psicología
-(26, 6, 41),  -- Sofía Rodríguez - Administración de Empresas
-(27, 7, 42),  -- Martín Fernández - Contabilidad
-(28, 8, 43),  -- Ana Gómez - Arquitectura
-(29, 9, 41),  -- Miguel Díaz - Diseño Gráfico
-(30, 10, 42), -- Laura Sánchez - Comunicación Social
-(31, 11, 43), -- David Ramírez - Relaciones Internacionales
-(32, 12, 41), -- Elena Torres - Educación
-(33, 13, 42), -- Diego Vargas - Biología
-(34, 14, 43), -- Marta Castro - Química
-(35, 15, 41), -- Luis Reyes - Física
-(36, 16, 42), -- Patricia Ruiz - Matemáticas
-(37, 17, 43), -- Javier Romero - Filosofía
-(38, 18, 41), -- Verónica Ortiz - Historia
-(39, 19, 42), -- Ricardo Núñez - Geografía
-(40, 20, 43); -- Sandra Iglesias - Literatura
+(1, 1, 2),  -- Juan Manuel Aguilar - Ingeniería Civil
+(2, 2, 3),  -- María López - Ingeniería Informática
+(3, 3, 1),  -- Carlos García - Medicina
+(4, 4, 2),  -- Lucía Martínez - Derecho
+(5, 5, 3),  -- Pablo González - Psicología
+(6, 6, 1),  -- Sofía Rodríguez - Administración de Empresas
+(7, 7, 2),  -- Martín Fernández - Contabilidad
+(8, 8, 3),  -- Ana Gómez - Arquitectura
+(9, 9, 1),  -- Miguel Díaz - Diseño Gráfico
+(10, 10, 2), -- Laura Sánchez - Comunicación Social
+(11, 11, 3), -- David Ramírez - Relaciones Internacionales
+(12, 12, 1), -- Elena Torres - Educación
+(13, 13, 2), -- Diego Vargas - Biología
+(14, 14, 3), -- Marta Castro - Química
+(15, 15, 1), -- Luis Reyes - Física
+(16, 16, 2), -- Patricia Ruiz - Matemáticas
+(17, 17, 3), -- Javier Romero - Filosofía
+(18, 18, 1), -- Verónica Ortiz - Historia
+(19, 19, 2), -- Ricardo Núñez - Geografía
+(20, 20, 3); -- Sandra Iglesias - Literatura
 GO
+
+INSERT INTO Eventos (nombre)
+VALUES ('Cursada');
 
 -- Insertar 10 aulas disponibles
 INSERT INTO Aulas_Disponibilidad (id_aula, id_evento, id_Profesor_Materia, disponible) VALUES
@@ -226,14 +229,14 @@ INSERT INTO Aulas_Disponibilidad (id_aula, id_evento, id_Profesor_Materia, dispo
 
 -- Insertar 10 aulas ocupadas
 INSERT INTO Aulas_Disponibilidad (id_aula, id_evento, id_Profesor_Materia, disponible) VALUES
-(11, 5, 1, 0),
-(12, 5, 2, 0),
-(13, 5, 3, 0),
-(14, 5, 4, 0),
-(15, 5, 5, 0),
-(16, 5, 6, 0),
-(17, 5, 7, 0),
-(18, 5, 5, 0),
-(19, 5, 3, 0),
-(20, 5, 1, 0);
+(11, 1, 1, 0),
+(12, 1, 2, 0),
+(13, 1, 3, 0),
+(14, 1, 4, 0),
+(15, 1, 5, 0),
+(16, 1, 6, 0),
+(17, 1, 7, 0),
+(18, 1, 5, 0),
+(19, 1, 3, 0),
+(20, 1, 1, 0);
 GO

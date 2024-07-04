@@ -1,3 +1,6 @@
+USE Gestion_Universitaria;
+GO
+
 CREATE PROCEDURE ElegirMateriaAProfesor
 AS
 BEGIN
@@ -12,5 +15,3 @@ END;
 GO
 
 
--- Llamar al procedimiento almacenado
-EXEC ElegirMateriaAProfesor

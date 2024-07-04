@@ -31,14 +31,3 @@ BEGIN
     COMMIT TRANSACTION;
 END;
 GO
-
-
-EXEC InsertarEstudianteConInscripcion
-    @nombre = 'Jorgelina',
-    @apellido = 'Bocci',
-    @email = 'jorgelina.bocci@gmail.com',
-    @FechaNacimiento = '1993-02-21',
-    @Sexo = 'F',
-    @id_carrera = 1,   -- ID de la carrera en la que se inscribe
-    @id_admin = 41;    -- ID del administrador que realiza la inscripción
-

@@ -27,4 +27,3 @@ GO
 
 
 
-Select * FROM Vista_Estudiantes_Aprobados;

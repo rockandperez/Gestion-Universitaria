@@ -38,6 +38,3 @@ GO
 
 
 
-EXEC EliminarEstudiantePorLegajo @id_legajo = 1000; -- Reemplaza 1000 con el número de legajo del estudiante que deseas eliminar
-
-

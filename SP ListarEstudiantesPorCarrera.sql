@@ -23,7 +23,3 @@ BEGIN
 END;
 GO
 
-
-
-
-EXEC ListarEstudiantesPorCarrera @NombreCarrera = 'Medicina';

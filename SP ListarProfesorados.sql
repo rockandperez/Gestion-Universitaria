@@ -1,5 +1,6 @@
 USE [Gestion_Universitaria]
 GO
+
 CREATE PROCEDURE ListarProfesorados
 AS
 BEGIN

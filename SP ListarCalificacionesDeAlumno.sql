@@ -1,3 +1,5 @@
+USE Gestion_Universitaria;
+GO
 
 CREATE PROCEDURE ListarCalificacionesDeAlumno
     @id_alumno INT
@@ -46,4 +48,3 @@ END
 GO
 
 
-EXEC ListarCalificacionesDeAlumno @id_alumno = 39;

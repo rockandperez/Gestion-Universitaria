@@ -49,8 +49,7 @@ GO
 CREATE TABLE [Profesor_Materia] (
   [id] int IDENTITY (1,1) PRIMARY KEY,
   [id_profesor] int,
-  [id_materia] int,
-  [id_aula] int
+  [id_materia] int
 )
 GO
 

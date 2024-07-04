@@ -1,6 +1,6 @@
 USE Gestion_Universitaria;
 GO
-
+-- Creo el registro en la tabla Profesor_Materia para posteriormente agregar una materia.
 CREATE TRIGGER TRG_CrearRegistroProfesorNuevo
 ON Profesores
 AFTER INSERT
