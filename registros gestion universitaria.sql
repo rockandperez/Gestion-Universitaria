@@ -210,3 +210,30 @@ INSERT INTO Inscripciones (id_alumno, id_carrera, id_admin) VALUES
 (39, 19, 42), -- Ricardo Núñez - Geografía
 (40, 20, 43); -- Sandra Iglesias - Literatura
 GO
+
+-- Insertar 10 aulas disponibles
+INSERT INTO Aulas_Disponibilidad (id_aula, id_evento, id_Profesor_Materia, disponible) VALUES
+(1, NULL, NULL, 1),
+(2, NULL, NULL, 1),
+(3, NULL, NULL, 1),
+(4, NULL, NULL, 1),
+(5, NULL, NULL, 1),
+(6, NULL, NULL, 1),
+(7, NULL, NULL, 1),
+(8, NULL, NULL, 1),
+(9, NULL, NULL, 1),
+(10, NULL, NULL, 1);
+
+-- Insertar 10 aulas ocupadas
+INSERT INTO Aulas_Disponibilidad (id_aula, id_evento, id_Profesor_Materia, disponible) VALUES
+(11, 5, 1, 0),
+(12, 5, 2, 0),
+(13, 5, 3, 0),
+(14, 5, 4, 0),
+(15, 5, 5, 0),
+(16, 5, 6, 0),
+(17, 5, 7, 0),
+(18, 5, 5, 0),
+(19, 5, 3, 0),
+(20, 5, 1, 0);
+GO
